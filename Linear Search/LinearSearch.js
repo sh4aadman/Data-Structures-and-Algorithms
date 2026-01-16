@@ -8,5 +8,5 @@ function linearSearch(arr, val) {
 
 console.log(linearSearch([9, 8, 7, 6, 5, 4, 3, 2, 1, 0], 10))
 
-// time complexity - O(n)
-// space complexity - O(1)
+// Time complexity - O(n)
+// Space complexity - O(1)

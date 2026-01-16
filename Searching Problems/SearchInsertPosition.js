@@ -1,6 +1,6 @@
 // LeetCode - Binary Search - Problem 35
 
-function SearchInsertPosition(nums, target) {
+function searchInsertPosition(nums, target) {
   var start = 0;
   var end = nums.length - 1;
   while (start <= end) {
@@ -11,7 +11,7 @@ function SearchInsertPosition(nums, target) {
   }
   return start;
 }
-console.log(SearchInsertPosition([1, 3, 5, 6], 7));
+console.log(searchInsertPosition([1, 3, 5, 6], 7));
 
 // Time Complexity - O(n)
 // Space Complexity - O(1)

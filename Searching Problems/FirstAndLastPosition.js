@@ -1,6 +1,6 @@
 // Leetcode - Binary Search - Problem 34
 
-function FirstAndLastPosition(nums, target) {
+function firstAndLastPosition(nums, target) {
     var left = 0;
     var right = nums.length - 1;
     var start = -1;
@@ -16,4 +16,4 @@ function FirstAndLastPosition(nums, target) {
     return [start, end];
 }
 
-console.log(FirstAndLastPosition([5,7,7,8,8,10], 8))
+console.log(firstAndLastPosition([5,7,7,8,8,10], 8))

@@ -1,6 +1,6 @@
 // A naive approach to find a shorter string into the longer string
 
-function NaiveStringSearch(long, short) {
+function naiveStringSearch(long, short) {
   var count = 0;
   for (var i = 0; i < long.length; i++) {
     for (var j = 0; j < short.length; j++) {
@@ -11,7 +11,7 @@ function NaiveStringSearch(long, short) {
   return count;
 }
 
-console.log(NaiveStringSearch("lorie loled", "lo"));
+console.log(naiveStringSearch("lorie loled", "lo"));
 
-// Time Complexity - O(n^2)
+// Time Complexity - O(n ^ 2)
 // Space Complexity - O(1)
