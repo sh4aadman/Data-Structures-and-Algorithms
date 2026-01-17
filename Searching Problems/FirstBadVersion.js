@@ -6,11 +6,8 @@ var firstBadVersion = function (isBadVersion) {
     var end = n;
     while (start < end) {
       var middle = Math.floor((start + end) / 2);
-      if (isBadVersion(middle)) {
-        end = middle;
-      } else {
-        start = middle + 1;
-      }
+      if (isBadVersion(middle)) end = middle;
+      else start = middle + 1;
     }
     return start;
   };
