@@ -1,7 +1,14 @@
 // Leetcode - Binary Search - Problem 374
 
-function guessNumber(guess) {
-  return function (n) {
+var pick = 71;
+
+function guess(result) {
+    if (pick > result) return 1;
+    else if (pick < result) return -1;
+    else if (pick === result) return 0;
+}
+
+function guessNumber(n) {
     var start = 1;
     var end = n;
     while (start <= end) {
@@ -12,8 +19,9 @@ function guessNumber(guess) {
       else if (result === 0) return middle;
     }
     return 1;
-  };
 }
+
+console.log(guessNumber(100));
 
 // Time Complexity - O(logn)
 // Space Complexity - O(1)
