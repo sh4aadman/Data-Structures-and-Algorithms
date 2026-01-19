@@ -15,6 +15,7 @@ function selectionSort(arr, comparator) {
     return arr;
   }
 
+  // Sorting with defined comparator
   return arr.sort(comparator);
 }
 
