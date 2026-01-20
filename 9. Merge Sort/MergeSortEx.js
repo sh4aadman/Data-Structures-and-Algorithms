@@ -35,16 +35,19 @@ function merge(arr1, arr2, comparator) {
             }
         }
     }
+
+    // Concatenation - arr.concat() - returns a new string with concatenating (added) values
     if (i < arr1.length) {
         sorted = sorted.concat(arr1.slice(i, arr1.length));
     }
     if (j < arr2.length) {
         sorted = sorted.concat(arr2.slice(j, arr2.length));
     }
+    
     return sorted;
 }
 
-console.log(merge(names, otherNames));
+console.log(merge(names, otherNames, stringLengthComparator));
 
 // Time Complexity - O(n + m)
 // Space Complexity - O(n + m)
