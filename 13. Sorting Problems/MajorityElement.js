@@ -1,5 +1,6 @@
 // Leetcode - Sorting - Problem 169
 
+// Space Complexity - O(1)
 function majorityElement(nums) {
   var result = 0;
   var majority = 0;
