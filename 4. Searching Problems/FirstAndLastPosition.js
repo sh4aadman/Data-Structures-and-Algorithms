@@ -25,5 +25,5 @@ function firstAndLastPosition(nums, target) {
 
 console.log(firstAndLastPosition([5, 7, 7, 8, 8, 10], 8));
 
-// Time Complexity - O(n)
+// Time Complexity - O(logn)
 // Space Complexity - O(1)
