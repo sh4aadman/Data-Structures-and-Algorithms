@@ -1,5 +1,7 @@
 // A naive approach to find a shorter string into the longer string
 
+// Using pointers to check for the similarities through an array
+
 function naiveStringSearch(long, short) {
   var count = 0;
   for (var i = 0; i < long.length; i++) {

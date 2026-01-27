@@ -1,4 +1,4 @@
-// Only works in sorted array
+// Only works in sorted array - searching through half of the target array
 
 function binarySearch(arr, elem) {
   let start = 0;
@@ -18,8 +18,8 @@ console.log(
       5, 6, 10, 13, 13, 13, 13, 13, 13, 13, 14, 18, 30, 34, 35, 37, 40, 44, 64,
       79, 84, 86, 95, 96, 98, 99,
     ],
-    13
-  )
+    13,
+  ),
 );
 
 // Time Complexity - O(log n)

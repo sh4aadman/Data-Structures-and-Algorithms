@@ -1,5 +1,9 @@
 // Bubble Sort
 
+// Swapping the biggest element at the end of the array first, then gradually the smaller ones.
+
+// https://youtube.com/shorts/WjSiHtBQLlw?si=0RQ9N2KPWVmjkMOA
+
 // for (let i = arr.length; i > 0; i--) {
 //     for (let j = 0; j < i - 1; j++) {
 //       if (arr[j] > arr[j + 1]) {
@@ -26,20 +30,20 @@
 
 // Optimized Solution
 function bubbleSort(arr) {
-    var noSwap;
-    for (var i = arr.length; i > 0; i--) {
-        noSwap = true;
-        for (var j = 0; j < i - 1; j++) {
-            if (arr[j] > arr[j + 1]) {
-                var temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
-                noSwap = false;
-            }
-        }
-        if (noSwap) break;
+  var noSwap;
+  for (var i = arr.length; i > 0; i--) {
+    noSwap = true;
+    for (var j = 0; j < i - 1; j++) {
+      if (arr[j] > arr[j + 1]) {
+        var temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+        noSwap = false;
+      }
     }
-    return arr;
+    if (noSwap) break;
+  }
+  return arr;
 }
 
 console.log(bubbleSort([1, 2, 3, 5, 10, 7]));

@@ -1,5 +1,5 @@
 function strLength(a, b) {
-  return a.length - b.length
+  return a.length - b.length;
 }
 
 function pivot(arr, comparator, start = 0, end = arr.length - 1) {
@@ -28,4 +28,6 @@ function pivot(arr, comparator, start = 0, end = arr.length - 1) {
 }
 
 // console.log(pivot([8, 4, 2, 5, 0, 10, 11, 12, 13, 16]));
-console.log(pivot(["LilBub", "Garfield", "Heathcliff", "Blue", "Grumpy"], strLength));
+console.log(
+  pivot(["LilBub", "Garfield", "Heathcliff", "Blue", "Grumpy"], strLength),
+);

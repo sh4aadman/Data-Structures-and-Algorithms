@@ -1,5 +1,9 @@
 // Merge Sort Algorithm
 
+// Supposing that if there is only one element in an array, the array is always sorted - splitting the array until the length of an array is 1 - there is only one element - then merging all the individual sorted array in ascending order.
+
+// https://youtube.com/shorts/7PcqoMWbxN8?si=pUatWKV5VebGAN0a
+
 function merge(arr1, arr2) {
   var sortedArr = [];
   var i = 0;
@@ -26,7 +30,7 @@ function merge(arr1, arr2) {
 
 function mergeSort(arr) {
   if (arr.length <= 1) return arr;
-  let mid = Math.floor((arr.length) / 2);
+  let mid = Math.floor(arr.length / 2);
   let left = mergeSort(arr.slice(0, mid));
   let right = mergeSort(arr.slice(mid));
   return merge(left, right);

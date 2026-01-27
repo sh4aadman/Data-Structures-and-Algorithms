@@ -1,5 +1,9 @@
 // Selection Sort
 
+// Sorting the minimum number first, then the larger numbers by looping through the array.
+
+// https://youtube.com/shorts/HRwi5gwlB0U?si=GgfzoBvVANWyCShi
+
 function selectionSort(arr) {
   const swap = (arr, idx1, idx2) =>
     ([arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]);
