@@ -1,4 +1,8 @@
-// Radix Sort Algorithm\
+// Radix Sort Algorithm
+
+// Non-comparative sorting algorithm - Uses radix / base to sort a group of integers / binary strings - Sorting numbers from Least Significant Digit to Most Significant Digit (Right to Left) into number of base's amount of buckets.
+
+// https://youtube.com/shorts/ZHjCj0Oz6hk?si=3_aozpBRrqTUIPyv
 
 function getDigit(num, i) {
   return (Math.floor(Math.abs(num) / Math.pow(10, i)) % 10);
@@ -21,9 +25,9 @@ function radixSort(nums) {
   let maxDigitCount = mostDigits(nums);
   for (let k = 0; k < maxDigitCount; k++) {
     let digitBuckets = Array.from({ length: 10 }, () => []);
-    for (let i = 0; i < nums.length; i++) {
-      let digit = getDigit(nums[i], k);
-      digitBuckets[digit].push(nums[i]);
+    for (let j = 0; j < nums.length; j++) {
+      let digit = getDigit(nums[j], k);
+      digitBuckets[digit].push(nums[j]);
     }
     nums = [].concat(...digitBuckets);
   }
