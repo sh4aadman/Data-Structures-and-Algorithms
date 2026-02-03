@@ -1,4 +1,4 @@
-// Leetcode - Problem List - 01
+// Leetcode - Problem List - Problem 01
 
 function twoSum(nums, target) {
   var prevMap = new Map();
