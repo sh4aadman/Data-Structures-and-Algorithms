@@ -58,6 +58,19 @@ class SinglyLinkedList {
     if (this.length === 0) this.tail = null;
     return current;
   }
+
+  unshift(val) {
+    var newNode = new Node(val);
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = this.head;
+    } else {
+      newNode.next = this.head;
+      this.head = newNode;
+    }
+    this.length++;
+    return this;
+  }
 }
 
 var list = new SinglyLinkedList();
@@ -67,4 +80,4 @@ list.push("How are you?");
 console.log(list);
 console.log(list.pop());
 console.log(list.shift());
-console.log(list);
+console.log(list.unshift("Oops!"));
