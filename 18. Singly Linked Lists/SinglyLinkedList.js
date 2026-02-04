@@ -49,6 +49,15 @@ class SinglyLinkedList {
     }
     return current;
   }
+
+  shift() {
+    if (!this.head) return undefined;
+    var current = this.head;
+    this.head = current.next;
+    this.length--;
+    if (this.length === 0) this.tail = null;
+    return current;
+  }
 }
 
 var list = new SinglyLinkedList();
@@ -57,4 +66,5 @@ list.push("there!");
 list.push("How are you?");
 console.log(list);
 console.log(list.pop());
-console.log(list.pop());
+console.log(list.shift());
+console.log(list);
