@@ -82,13 +82,26 @@ class SinglyLinkedList {
     }
     return current;
   }
+
+  set(index, val) {
+    var nodeFound = this.get(index);
+    if (nodeFound) {
+      nodeFound.val = val;
+      return true;
+    }
+    return false;
+  }
 }
 
 var list = new SinglyLinkedList();
 list.push("Hello!");
 list.push("there!");
 list.push("How are you?");
+list.push("Where are you going?");
 console.log(list);
 console.log(list.pop());
 console.log(list.shift());
 console.log(list.unshift("Oops!"));
+console.log(list.get(2));
+console.log(list.set(1, "Changed!"));
+console.log(list);
