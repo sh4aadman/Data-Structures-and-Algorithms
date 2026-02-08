@@ -115,6 +115,21 @@ class SinglyLinkedList {
     this.length--;
     return removedNode;
   }
+
+  reverse() {
+    var node = this.head;
+    this.head = this.tail;
+    this.tail = node;
+    var next;
+    var prev = null;
+    while (node) {
+      next = node.next;
+      node.next = prev;
+      prev = node;
+      node = next;
+    }
+    return this;
+  }
 }
 
 var list = new SinglyLinkedList();
@@ -122,11 +137,11 @@ list.push("Hello!");
 list.push("there!");
 list.push("How are you?");
 list.push("Where are you going?");
-console.log(list);
-console.log(list.pop());
-console.log(list.shift());
-console.log(list.unshift("Oops!"));
-console.log(list.get(2));
-console.log(list.set(1, "Changed!"));
-console.log(list.insert(2, "INSERTED!!"));
-console.log(list);
+// console.log(list);
+// console.log(list.pop());
+// console.log(list.shift());
+// console.log(list.unshift("Oops!"));
+// console.log(list.get(2));
+// console.log(list.set(1, "Changed!"));
+// console.log(list.insert(2, "INSERTED!!"));
+console.log(list.reverse());
