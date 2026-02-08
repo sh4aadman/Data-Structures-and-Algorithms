@@ -1,20 +1,22 @@
 // Leetcode - Sliding Window - Problem 594
 
 function findLHS(nums) {
-  var start = 0;
-  for (var end = 0; end < nums.length; end++) {
-    if (
-      Math.abs(nums[end] - nums[start]) === 1 ||
-      nums[end] - nums[start] === 0
-    ) {
-      var windowLength = end - start + 1;
-    }
+  nums.sort((a, b) => a - b);
+  var left = 0;
+  var maxLength = 0;
+
+  for (var right = 0; right < nums.length; right++) {
+    while (nums[right] - nums[left] > 1) left++;
+
+    if (nums[right] - nums[left] === 1)
+      maxLength = Math.max(maxLength, right - left + 1);
   }
 
-  return windowLength;
+  return maxLength;
 }
 
-console.log(findLHS([1,1,1,1]));
+console.log(findLHS([1, 3, 2, 2, 5, 2, 3, 7]));
+console.log(findLHS([1, 1, 1, 1]));
 
-// Time Complexity - O()
-// Space Complexity - O()
+// Time Complexity - O(nlogn)
+// Space Complexity - O(1)
