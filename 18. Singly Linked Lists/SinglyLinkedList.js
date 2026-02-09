@@ -145,3 +145,9 @@ console.log(list.get(2));
 console.log(list.set(1, "Changed!"));
 console.log(list.insert(2, "INSERTED!!"));
 console.log(list.reverse());
+
+// Time Complexities ->
+// Insertion - O(1)
+// Removal - O(1) / O(n) - depends
+// Searching - O(n)
+// Access - O(n)
