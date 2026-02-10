@@ -1,6 +1,6 @@
 // Leetcode - Sliding Window - Problem 594
 
-// The intuition is to use frequency counter pattern to lessen the time complexity - from O(nlogn) to O(n)
+// The intuition is to use frequency counter pattern instead of sliding window to lessen the time complexity - O(nlogn) - sort O(logn) > sliding window O(n).
 
 function findLHS(nums) {
   var dict = new Map();

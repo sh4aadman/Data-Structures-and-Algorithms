@@ -30,3 +30,15 @@ console.log(smallerNumbersThanCurrent([7, 7, 7, 7]));
 
 // Time Complexity - O(n + K) - range of number [0, 100]
 // Space Complexity - O(K) + O(1)
+
+// Time Complexity - O(nlogn)
+// function smallerNumberThanCurrent(nums) {
+//   var sorted = [...nums].sort((a, b) => a - b);
+//   var map = new Map();
+
+//   for (var i = 0; i < sorted.length; i++) {
+//     if (!map.has(sorted[i])) map.set(sorted[i], i);
+//   }
+
+//   return nums.map((num) => map.get(num));
+// }
