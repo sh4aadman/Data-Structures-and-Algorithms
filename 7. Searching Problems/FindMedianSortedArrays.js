@@ -1,5 +1,8 @@
 // Leetcode -Problem List - Problem 04
 
+// Approach 02 - Binary Search Technique
+// Another approach is Two Pointer
+
 function findMedianSortedArrays(nums1, nums2) {
     
 }
