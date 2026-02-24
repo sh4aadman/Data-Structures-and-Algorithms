@@ -11,6 +11,7 @@
 
 // Common Techniques
 // Odd / Even Number -> num & 1 - returns true if the number is odd.
+// Get the middle point -> Right Shift / Signed Right Shift - returns the rounded down of the middle point of two given values.
 // Swapping two numbers - 
 // Getting a specific bit - 
 // Setting a specific bit - 
