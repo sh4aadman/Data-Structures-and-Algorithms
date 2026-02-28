@@ -1,6 +1,6 @@
-// Linked Lists - contains head, tail, length property.
+// Singly Linked Lists - contains head, tail, length property.
 
-// Consists of nodes - each node has a value and a pointer to another node or null.
+// Consists of nodes - each node has a value and a pointer to next node or null.
 
 // Comparison with Arrays - do not have indeces.
 
@@ -9,6 +9,8 @@
 // Random access is not allowed.
 
 // Where arrays are indexed in order - insertion and deletion can be expensive - can quickly be accessed at a specific index.
+
+// Insertion and Deletion at the begining of the list are of constant time O(1).
 
 // Singly Linked Lists are an excellent alternative to arrays when insertion and deletion at the beginning.
 
