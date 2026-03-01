@@ -46,3 +46,9 @@ class DoublyLinkedList {
 var list = new DoublyLinkedList();
 list.push(1).push(3).push(5);
 console.log(list.reverse());
+
+// Time Complexities ->
+// Insertion - O(1)
+// Removal - O(1)
+// Searching - O(n) [O(n / 2)]
+// Access - O(n)
