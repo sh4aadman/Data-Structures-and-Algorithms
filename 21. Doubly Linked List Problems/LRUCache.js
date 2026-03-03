@@ -1,26 +1,74 @@
 // Leetcode - Problem List - Problem 146
 
+// The same problem can be solved by implementing Map only. A Doubly Linked List allows to remove a node from the middle of the list and move it to the front (the "Most Recently Used" position) in O(1) time, provided that having a reference to that node.
+
+class Node {
+  constructor(key, value) {
+    this.key = key;
+    this.value = value;
+
+    this.prev = null;
+    this.next = null;
+  }
+}
+
 class LRUCache {
   constructor(capacity) {
     this.capacity = capacity;
     this.cache = new Map();
+
+    this.head = new Node(0, 0);
+    this.tail = new Node(0, 0);
+
+    this.head.next = this.tail;
+    this.tail.prev = this.head;
   }
 
   get(key) {
-    if (!this.cache.has(key)) return -1;
+    if (this.cache.has(key)) {
+      var node = this.cache.get(key);
 
-    var val = this.cache.get(key);
-    this.cache.delete(key);
-    this.cache.set(key, val);
+      this.remove(node);
+      this.add(node);
 
-    return val;
+      return node.value;
+    }
+
+    return -1;
   }
 
   put(key, value) {
-    if (this.cache.has(key)) this.cache.delete(key);
-    else if (this.cache.size >= this.capacity)
-      this.cache.delete(this.cache.keys().next().value);
-    this.cache.set(key, value);
+    if (this.cache.has(key)) this.remove(this.map.get(key));
+
+    var newNode = new Node(key, value);
+
+    this.cache.set(key, newNode);
+    this.add(newNode);
+
+    if (this.cache.size > this.capacity) {
+      var lru = this.tail.prev;
+
+      this.remove(lru);
+      this.cache.delete(lru.key);
+    }
+  }
+
+  add(node) {
+    var afterNode = this.head.next;
+
+    node.next = afterNode;
+    node.prev = this.head;
+
+    this.head.next = node;
+    afterNode.prev = node;
+  }
+
+  remove(node) {
+    var beforeNode = node.prev;
+    var afterNode = node.next;
+
+    beforeNode.next = afterNode;
+    afterNode.prev = beforeNode;
   }
 }
 
