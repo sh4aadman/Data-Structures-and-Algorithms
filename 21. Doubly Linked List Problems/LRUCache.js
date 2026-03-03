@@ -38,7 +38,7 @@ class LRUCache {
   }
 
   put(key, value) {
-    if (this.cache.has(key)) this.remove(this.map.get(key));
+    if (this.cache.has(key)) this.remove(this.cache.get(key));
 
     var newNode = new Node(key, value);
 
