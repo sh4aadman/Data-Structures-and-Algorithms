@@ -14,7 +14,7 @@ class AuthenticationManager {
     var expiry = this.tokens.get(tokenId);
 
     if (expiry && expiry > currentTime) {
-      this.tokens.set(tokenId, expiry + this.timeToLive);
+      this.tokens.set(tokenId, currentTime + this.timeToLive);
     }
   }
 
