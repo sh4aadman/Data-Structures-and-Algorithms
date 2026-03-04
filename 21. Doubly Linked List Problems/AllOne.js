@@ -29,8 +29,6 @@ class AllOne {
 
     previousNode.next.prev = newNode;
     previousNode.next = newNode;
-
-    return newNode;
   }
 
   insertBefore(currentNode, count) {
@@ -41,8 +39,6 @@ class AllOne {
 
     currentNode.prev.next = prevNode;
     currentNode.prev = prevNode;
-
-    return prevNode;
   }
 
   removeIfEmpty(currentNode) {
@@ -86,8 +82,10 @@ class AllOne {
 
       if (currNode.prev.count !== newCount) {
         this.insertBefore(currNode, newCount);
-        this.map.set(key, currNode.prev);
       }
+
+      currNode.prev.keys.add(key);
+      this.map.set(key, currNode.prev);
     }
 
     currNode.keys.delete(key);
