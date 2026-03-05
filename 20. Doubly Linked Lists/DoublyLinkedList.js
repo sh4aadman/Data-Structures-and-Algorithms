@@ -129,11 +129,11 @@ class DoublyLinkedList {
     if (index < 0 || index >= this.length) return undefined;
     if (index === 0) return this.shift();
     if (index === this.length - 1) return this.pop();
-    
+
     var removedNode = this.get(index);
     var beforeNode = removedNode.prev;
     var afterNode = removedNode.next;
-    
+
     ((beforeNode.next = afterNode), (afterNode.prev = beforeNode));
     ((removedNode.next = null), (removedNode.prev = null));
     this.length--;
@@ -145,3 +145,9 @@ var list = new DoublyLinkedList();
 list.push("Harry");
 list.push("Ron");
 list.push("Hermione");
+
+// Time Complexities ->
+// Insertion - O(1)
+// Removal - O(1)
+// Searching - O(n) [O(n / 2)]
+// Access - O(n)

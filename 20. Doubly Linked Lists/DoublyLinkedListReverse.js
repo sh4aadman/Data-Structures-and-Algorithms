@@ -1,54 +1,49 @@
 class Node {
-    constructor(val) {
-        this.val = val;
-        this.next = null;
-        this.prev = null;
-    }
+  constructor(val) {
+    this.val = val;
+    this.next = null;
+    this.prev = null;
+  }
 }
 
 class DoublyLinkedList {
-    constructor() {
-        this.head = null;
-        this.tail = null;
-        this.length = 0;
-    }
+  constructor() {
+    this.head = null;
+    this.tail = null;
+    this.length = 0;
+  }
 
-    push(val) {
-        var node = new Node(val);
-        if (this.head === null) {
-            this.head = node;
-            this.tail = this.head;
-        } else {
-            this.tail.next = node;
-            node.prev = this.tail;
-            this.tail = node;
-        }
-        this.length++;
-        return this;
+  push(val) {
+    var node = new Node(val);
+    if (this.head === null) {
+      this.head = node;
+      this.tail = this.head;
+    } else {
+      this.tail.next = node;
+      node.prev = this.tail;
+      this.tail = node;
     }
+    this.length++;
+    return this;
+  }
 
-    reverse() {
-        var currentNode = this.head;
-        this.head = this.tail;
-        this.tail = currentNode;
-        var nextNode = null, prevNode = null;
-        while (currentNode) {
-            nextNode = currentNode.next;
-            currentNode.next = prevNode;
-            currentNode.prev = nextNode;
-            prevNode = currentNode;
-            currentNode = nextNode;
-        }
-        return this;
+  reverse() {
+    var currentNode = this.head;
+    this.head = this.tail;
+    this.tail = currentNode;
+    var nextNode = null,
+      prevNode = null;
+    while (currentNode) {
+      nextNode = currentNode.next;
+      currentNode.next = prevNode;
+      currentNode.prev = nextNode;
+      prevNode = currentNode;
+      currentNode = nextNode;
     }
+    return this;
+  }
 }
 
 var list = new DoublyLinkedList();
 list.push(1).push(3).push(5);
 console.log(list.reverse());
-
-// Time Complexities ->
-// Insertion - O(1)
-// Removal - O(1)
-// Searching - O(n) [O(n / 2)]
-// Access - O(n)
