@@ -18,9 +18,9 @@ class Stack {
             this.first = newNode;
             this.last = newNode;
         } else {
-            var temp = this.last;
-            this.last = newNode;
-            this.last.next = temp;
+            var temp = this.first;
+            this.first = newNode;
+            this.first.next = temp;
         }
         return ++this.size;
     }
