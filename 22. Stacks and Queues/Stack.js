@@ -27,7 +27,7 @@ class Stack {
 
     pop() {
         if (!this.first) return null;
-        var temp = this.last;
+        var temp = this.first;
         if (this.first === this.last) {
             this.last = null;
         }
