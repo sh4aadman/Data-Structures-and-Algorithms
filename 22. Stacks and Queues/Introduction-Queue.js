@@ -3,3 +3,4 @@
 // Queues are an excellent choice for -
 // 01. Macrotask Queue (Task Queue): Handles tasks like setTimeout, setInterval, and I/O operations.
 // 02. Microtask Queue: Has higher priority and handles tasks like Promises (.then(), .catch(), .finally()).
+// 03. Background Tasks, Uploading/Downloading Resources, Printing/Task Processing.
