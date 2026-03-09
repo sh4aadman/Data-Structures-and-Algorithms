@@ -28,7 +28,6 @@ class Queue {
     if (!this.first) return null;
     var removed = this.first;
     if (this.first === this.last) {
-      this.first = null;
       this.last = null;
     }
     this.first = this.first.next;
