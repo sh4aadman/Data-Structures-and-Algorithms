@@ -33,7 +33,7 @@ console.log(predictPartyVictory("RD"));
 console.log(predictPartyVictory("RDD"));
 
 // Time Complexity - O(n)
-// Space Complexity - O(n)
+// Space Complexity - O(n) [two-queue/ban-debt] / O(1) [in-place]
 
 // Opttimized Ban Debt Approach
 function predictPartyVictory(senate) {
@@ -71,6 +71,45 @@ function predictPartyVictory(senate) {
         queue.push("D");
       }
     }
+  }
+
+  return radiantCount > 0 ? "Radiant" : "Dire";
+}
+
+// Two-Pointer In-Place Approach
+function predictPartyVictory(senate) {
+  var queue = senate.split("");
+  var radiantBanDebt = 0;
+  var direBanDebt = 0;
+
+  var radiantCount = 0;
+  var direCount = 0;
+
+  for (var char of queue) {
+    if (char === "R") radiantCount++;
+    else direCount++;
+  }
+
+  var i = 0;
+  while (radiantCount > 0 && direCount > 0) {
+    if (queue[i] === "R") {
+      if (radiantBanDebt > 0) {
+        queue[i] = "X";
+        radiantBanDebt--;
+        radiantCount--;
+      } else {
+        direBanDebt++;
+      }
+    } else if (queue[i] === "D") {
+      if (direBanDebt > 0) {
+        queue[i] = "X";
+        direBanDebt--;
+        direCount--;
+      } else {
+        radiantBanDebt++;
+      }
+    }
+    i = (i + 1) % queue.length;
   }
 
   return radiantCount > 0 ? "Radiant" : "Dire";
