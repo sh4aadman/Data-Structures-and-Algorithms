@@ -14,5 +14,15 @@ function findComplement(nums) {
 console.log(bitwiseComplement(5));
 console.log(bitwiseComplement(1));
 
-// Time Complexity - O(n)
+// Time Complexity - O(n) [string] / O(1) [bitmask]
 // Space Complexity - O(n)
+
+function bitwiseComplement(n) {
+  if (n === 0) return 1;
+
+  var numBits = Math.floor(Math.log2(n)) + 1;
+
+  var mask = (1 << numBits) - 1;
+
+  return n ^ mask;
+}
